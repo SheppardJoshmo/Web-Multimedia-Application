@@ -12,7 +12,8 @@ let seek_slider = document.querySelector('.seek_slider');
 let curr_time = document.querySelector('.current-time');
 let total_duration = document.querySelector('.total-duration');
 let randomIcon = document.querySelector('.fa-random');
-let curr_track = document.createElement('audio');
+
+let curr_track = document.querySelector('audio')
 
 let track_index = 0;
 let isPlaying = false;
@@ -93,10 +94,18 @@ function reset(){
 }
 
 function playpauseTrack(){
+
     isPlaying ? pauseTrack() : playTrack();
+    
+
 }
+
 function playTrack(){
+    if(!context){
+        preparation();
+    }
     curr_track.play();
+    loop();
     isPlaying = true;
     track_art.classList.add('rotate');
     playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
@@ -156,4 +165,45 @@ function setUpdate(){
         curr_time.textContent = currentMinutes + ":" + currentSeconds;
         total_duration.textContent = durationMinutes + ":" + durationSeconds;
     }
+}
+
+
+
+
+
+let audio, context, analyser, src, array, logo;
+const num = 32
+array = new Uint8Array(num);
+const wrapper = document.querySelector('.wrapper')
+items = document.querySelectorAll(".stroke");
+
+
+function preparation(){
+    context = new AudioContext();
+    analyser = context.createAnalyser();
+    analyser.fftSize = 2048;
+    src = context.createMediaElementSource(curr_track);
+    src.connect(analyser);
+    analyser.connect(context.destination);
+    loop();
+}
+
+function loop(){
+    if(!curr_track.paused){
+        window.requestAnimationFrame(loop);
+    }
+    array = new Uint8Array(analyser.frequencyBinCount);
+    analyser.getByteFrequencyData(array);
+    for(var i = 0 ; i < items.length ; i++){
+        height = array[i+num];
+        items[i].style.opacity = 0.008*height;
+        if (height<150){
+        items[i].style.height = height/5 -20+'px';
+        }else if(height>150&&height<200){
+        items[i].style.height = height/4 -20+'px';
+        }
+        else{
+        items[i].style.height = height/2 -40+'px';
+        }
+    }   
 }
