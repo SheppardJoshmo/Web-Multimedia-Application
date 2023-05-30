@@ -104,11 +104,21 @@ input[type="range"]::-webkit-slider-thumb {
     font-size: 48px;
 }
 
-
-.stroke {
-    display: inline-block;
-    width: 5px;
-    height: 20px;
-    margin: 0 1px;
-    background-color: #777;
+.wave{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
 }
+.stroke{
+    background: black;
+    height: 15px;
+    width: 10px;
+    border-radius: 50px;
+    margin: 0 5px;
+    display: inline-block;
+    text-align: center;
+        animation: animate 1.4s linear infinite;
+}
+
