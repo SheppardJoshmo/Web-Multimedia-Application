@@ -1,43 +1,72 @@
 <head>
+    <!-- Устанавливаем кодировку документа -->
     <meta charset="UTF-8">
+    <!-- Указываем, что данный документ совместим с Internet Explorer -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Задаем параметры отображения страницы на различных устройствах -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Задаем заголовок страницы -->
     <title>Music Player</title>
+    <!-- Подключаем внешний файл стилей style.css -->
     <link rel="stylesheet" href="style.css">
+    <!-- Подключаем внешний файл скрипта script.js со значением defer, чтобы скрипт загружался асинхронно и выполнялся после полной загрузки документа -->
     <script src="script.js" defer></script>
+    <!-- Задаем иконку для вкладки веб-страницы -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
+    <!-- Подключаем внешний файл стилей all.min.css из библиотеки Font Awesome версии 5.13.0 -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- Подключаем внешний файл стилей font-awesome.min.css из библиотеки Font Awesome версии 4.7.0 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
+   <!-- Основной контейнер плеера -->
    <div class="player">
+       <!-- Обертка для содержимого плеера -->
        <div class="wrapper">
+           <!-- Блок с деталями текущего трека -->
            <div class="details">
+               <!-- Отображение информации о текущем треке (пример: "PLAYING x OF y") -->
                <div class="now-playing">PLAYING x OF y</div>
+               <!-- Обложка текущего трека -->
                <div class="track-art"></div>
+               <!-- Название текущего трека -->
                <div class="track-name">Track Name</div>
+               <!-- Исполнитель текущего трека -->
                <div class="track-artist">Track Artist</div>
            </div>
 
+           <!-- Контейнер для слайдера прогресса трека -->
            <div class="slider_container">
+               <!-- Отображение текущего времени воспроизведения трека -->
                <div class="current-time">00:00</div>
-                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-                <div class="total-duration">00:00</div>
+               <!-- Слайдер для выбора позиции воспроизведения трека -->
+               <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+               <!-- Отображение общей продолжительности трека -->
+               <div class="total-duration">00:00</div>
            </div>
 
+           <!-- Кнопки управления плеером -->
            <div class="buttons">
+               <!-- Кнопка предыдущего трека -->
                <div class="prev-track" onclick="prevTrack()">
                     <i class="fa fa-step-backward fa-2x"></i>
                 </div>
+                <!-- Элемент audio для воспроизведения звука -->
                 <audio id="audio"></audio>
+                <!-- Кнопка воспроизведения/паузы трека -->
                 <div class="playpause-track" onclick="playpauseTrack()">
                     <i class="fa fa-play-circle fa-5x"></i>
                 </div>
+                <!-- Кнопка следующего трека -->
                 <div class="next-track" onclick="nextTrack()">
                     <i class="fa fa-step-forward fa-2x"></i>
                 </div>
            </div>
+           <!-- Анимированная волна визуализации звука -->
            <div class="wave">
+            <!-- Контейнеры для отображения анимации волны -->
             <span class="stroke"></span>
             <span class="stroke"></span>
             <span class="stroke"></span>

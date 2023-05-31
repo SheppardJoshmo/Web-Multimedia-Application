@@ -1,124 +1,142 @@
+/* Задаем общие стили для всего документа */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(to right,#9a1d86, #1595be);
-    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif; /* Устанавливаем шрифт */
+    background: linear-gradient(to right,#9a1d86, #1595be); /* Задаем фоновый градиент */
+    font-weight: bold; /* Устанавливаем жирность шрифта */
 }
 
+/* Стили для блока плеера */
 .player {
-    height: 95vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+    height: 95vh; /* Устанавливаем высоту блока плеера */
+    display: flex; /* Размещаем элементы внутри блока плеера в виде флекс-контейнера */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+    flex-direction: column; /* Задаем направление элементов по вертикали */
+    justify-content: center; /* Выравниваем элементы по центру по горизонтали */
 }
 
+/* Стили для обертки вокруг контента плеера */
 .wrapper {
-    border: 1px solid transparent;
-    padding: 30px;
-    border-radius: 20px;
-    background-color: #ddd;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border: 1px solid transparent; /* Устанавливаем границу */
+    padding: 30px; /* Задаем внутренние отступы */
+    border-radius: 20px; /* Задаем скругление углов */
+    background-color: #ddd; /* Задаем цвет фона */
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px; /* Добавляем тень */
 }
 
+/* Стили для блока деталей песни */
 .details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
+    display: flex; /* Размещаем элементы внутри блока деталей в виде флекс-контейнера */
+    flex-direction: column; /* Задаем направление элементов по вертикали */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+    margin-bottom: 20px; /* Задаем отступ снизу */
 }
 
+/* Стили для обложки трека */
 .track-art {
-    width: 200px;
-    height: 200px;
-    background-color: #fff;
-    border-radius: 50%;
-    margin-bottom: 10px;
+    width: 200px; /* Задаем ширину обложки трека */
+    height: 200px; /* Задаем высоту обложки трека */
+    background-color: #fff; /* Задаем цвет фона обложки */
+    border-radius: 50%; /* Задаем скругление углов обложки */
+    margin-bottom: 10px; /* Задаем отступ снизу */
 }
 
+/* Стили для названия трека */
 .track-name {
-    font-size: 24px;
-    margin-bottom: 5px;
+    font-size: 24px; /* Задаем размер шрифта */
+    margin-bottom: 5px; /* Задаем отступ снизу */
 }
 
+/* Стили для имени артиста */
 .track-artist {
-    font-size: 18px;
-    color: #777;
+    font-size: 18px; /* Задаем размер шрифта */
+    color: #777; /* Задаем цвет текста */
 }
 
+/* Стили для контейнера слайдера */
 .slider_container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
+    display: flex; /* Размещаем элементы внутри контейнера слайдера в виде флекс-контейнера */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+    justify-content: center; /* Выравниваем элементы по центру по горизонтали */
+    margin-bottom: 20px; /* Задаем отступ снизу */
 }
 
+/* Стили для ползунка слайдера */
 input[type="range"] {
-    width: 200px;
-    -webkit-appearance: none;
-    background-color: #888;
-    height: 2px;
-    outline: none;
-    border-radius: 5px;
-    margin: 0 10px;
+    width: 200px; /* Задаем ширину ползунка слайдера */
+    -webkit-appearance: none; /* Убираем стандартный вид ползунка для браузеров на базе WebKit */
+    background-color: #888; /* Задаем цвет фона ползунка */
+    height: 2px; /* Задаем высоту ползунка */
+    outline: none; /* Убираем контур вокруг ползунка при фокусе */
+    border-radius: 5px; /* Задаем скругление углов ползунка */
+    margin: 0 10px; /* Задаем отступы слева и справа */
 }
 
+/* Стили для ползунка слайдера в браузерах на базе WebKit */
 input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 10px;
-    height: 10px;
-    background-color: #444;
-    border-radius: 50%;
-    cursor: pointer;
+    -webkit-appearance: none; /* Убираем стандартный вид ползунка для браузеров на базе WebKit */
+    appearance: none; /* Убираем стандартный вид ползунка */
+    width: 10px; /* Задаем ширину ползунка */
+    height: 10px; /* Задаем высоту ползунка */
+    background-color: #444; /* Задаем цвет фона ползунка */
+    border-radius: 50%; /* Задаем скругление углов ползунка */
+    cursor: pointer; /* Задаем курсор при наведении на ползунок */
 }
 
+/* Стили для блока с кнопками */
 .buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Размещаем элементы внутри блока с кнопками в виде флекс-контейнера */
+    justify-content: center; /* Выравниваем элементы по центру по горизонтали */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
 }
 
+/* Стили для кнопок */
 .buttons > div {
-    margin: 0 10px;
-    cursor: pointer;
+    margin: 0 10px; /* Задаем отступы между кнопками */
+    cursor: pointer; /* Задаем курсор при наведении на кнопки */
 }
 
+/* Стили для иконок кнопок */
 .fa-step-backward,
 .fa-step-forward,
 .fa-play-circle {
-    color: #444;
+    color: #444; /* Задаем цвет иконок кнопок */
 }
 
+/* Стили для иконок кнопок при наведении */
 .fa-step-backward:hover,
 .fa-step-forward:hover,
 .fa-play-circle:hover {
-    color: #111;
+    color: #111; /* Задаем цвет иконок кнопок при наведении */
 }
 
+/* Стили для увеличенных иконок */
 .fa-step-backward.fa-2x,
 .fa-step-forward.fa-2x {
-    font-size: 24px;
+    font-size: 24px; /* Задаем размер увеличенных иконок */
 }
 
+/* Стили для очень большой иконки */
 .fa-play-circle.fa-5x {
-    font-size: 48px;
+    font-size: 48px; /* Задаем размер очень большой иконки */
 }
 
+/* Стили для блока волны */
 .wave{
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    height: 50px;
-    align-items: center;
-}
-.stroke{
-    background: black;
-    height: 15px;
-    width: 10px;
-    border-radius: 50px;
-    margin: 0 5px;
-    display: inline-block;
-    text-align: center;
-        animation: animate 1.4s linear infinite;
+    margin-top: 20px; /* Задаем отступ сверху */
+    display: flex; /* Размещаем элементы внутри блока волны в виде флекс-контейнера */
+    justify-content: center; /* Выравниваем элементы по центру по горизонтали */
+    height: 50px; /* Задаем высоту блока волны */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
 }
 
+/* Стили для отдельного отрезка волны */
+.stroke{
+    background: black; /* Задаем цвет отрезка волны */
+    height: 15px; /* Задаем высоту отрезка волны */
+    width: 10px; /* Задаем ширину отрезка волны */
+    border-radius: 50px; /* Задаем скругление углов отрезка волны */
+    margin: 0 5px; /* Задаем отступы между отрезками волны */
+    display: inline-block; /* Устанавливаем отрезки волны в одну линию */
+    text-align: center; /* Выравниваем текст по центру */
+    animation: animate 1.4s linear infinite; /* Запускаем анимацию для отрезков волны */
+}
